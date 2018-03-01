@@ -34,7 +34,6 @@ class DevopsPlugin(Plugin):
     token_class = Token
 
     def ingest(self, key, value):
-       
         value['ts'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%s')
         mapper_tasks.message_producer(key,value)
 
